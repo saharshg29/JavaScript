@@ -1,6 +1,8 @@
 // Naive Search algorithm is an algorithm used to check the presence of a substring in a main string
 // If substring is present in main string return true else return false
 
+// Use two loops one 
+
 function naiveSearch(string, substring) {
     for (let i = 0; i<string.length; i++) {
         for(let j = 0; j<substring.length; j++){
