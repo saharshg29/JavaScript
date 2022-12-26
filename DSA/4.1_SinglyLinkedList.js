@@ -164,7 +164,7 @@ class SingleLinkedList {
   // Set next property of newNode to previous next of node
   // increment length i.e. length++
   // return true
-  
+
   insert(value, index) {
     if (index < 0 || index > this.length) {
       return null;
@@ -177,12 +177,12 @@ class SingleLinkedList {
       this.push(value);
       return this;
     } else {
-      this.length++
-      let newNode = new Node
+      this.length++;
+      let newNode = new Node();
       let current = this.get(index - 1);
       let remaining = this.get(index);
       current.next = newNode;
-      newNode.value = value
+      newNode.value = value;
       newNode.next = remaining;
       return this;
     }
@@ -190,21 +190,36 @@ class SingleLinkedList {
 
   remove(index) {
     if (index < 0 || index >= this.length) {
-      return null
-    }if (index === 0) {
-      return this.shift()
-    } if (index === this.length - 1) {
-      return this.pop()
+      return null;
+    }
+    if (index === 0) {
+      return this.shift();
+    }
+    if (index === this.length - 1) {
+      return this.pop();
     } else {
-      let previous = this.get(index - 1)
-      let removed = this.get(index)
-      previous.next = removed.next
+      let previous = this.get(index - 1);
+      let removed = this.get(index);
+      previous.next = removed.next;
       this.length--;
-      return removed
+      return removed;
     }
   }
 
-
+  reverse() {
+    let node = this.head
+    this.head= this.tail
+    this.tail=node
+    let prev = null;
+    let next;
+    for(let i = 0; i<this.length;i++){
+      next = node.next
+      node.next = prev
+      prev=node
+      node = next
+    }
+    return this
+  }
 }
 
 // PERFORMING OPEARIONS ON LINKED LIST
@@ -223,5 +238,14 @@ ll.push(3); // Adding next element
 // console.log(ll.insert(56, 1));
 // console.log(ll.remove(2));
 ll.traverse();
+// ll.reverse();
+console.log(ll.reverse());
+ll.traverse();
+// console.log(ll); // Print entire linked list
 
-console.log(ll); // Print entire linked list
+
+// TIME COMPLEXITY
+// INSERTION -> O(1)
+// REMOVAL -> O(1) or O(n)
+// SEARCHING -> O(n)
+// ACCESSING -> O(N)
