@@ -1,46 +1,33 @@
-"use strict";
+let parent = [
+  [1, 2, 3],
+  [3, 2, 1],
+  [1, 1, 1],
+];
 
-process.stdin.resume();
-process.stdin.setEncoding("utf-8");
-
-let inputString = "";
-let currentLine = 0;
-
-process.stdin.on("data", (inputStdin) => {
-  inputString += inputStdin;
-});
-
-process.stdin.on("end", (_) => {
-  inputString = inputString
-    .trim()
-    .split("\n")
-    .map((string) => {
-      return string.trim();
+let compare = (arr) => {
+  let final = [];
+  let matched;
+  for (let i = 0; i < arr.length; i++) {
+    let firstStr, secondStr;
+    let first = [],
+      second = [];
+    first = arr[i];
+    first = first.sort((a, b) => {
+      return a - b;
     });
-
-  main();
-});
-
-function readline() {
-  return inputString[currentLine++];
-}
-// Make a Snippet for the code above this and then write your logic in main();
-
-function main() {
-  const x = readline();
-  var num = readline()
-    .split(" ")
-    .map((x) => parseInt(x));
-  let k = true;
-  while (k) {
-    if (num[0] > num[1]) {
-      num[0] += num[1];
-      num.splice(1, 1);
-      if (num.length == 1 || num[0] < num[1]) {
-        k = false;
+    for (let j = i + 1; j < arr.length; j++) {
+      second = arr[j];
+      second = second.sort((a, b) => {
+        return a - b;
+      });
+      if (JSON.stringify(arr[i]) === JSON.stringify(arr[j])) {
+        arr.splice(j);
       }
     }
+    final.push(arr[i])
   }
-  for (let i = 0; i<num.length)
-  console.log(num);
-}
+  final = arr
+  return final;
+};
+
+console.log(compare(parent));
