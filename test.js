@@ -1,33 +1,27 @@
-let parent = [
-  [1, 2, 3],
-  [3, 2, 1],
-  [1, 1, 1],
-];
+// function ListNode(val, next) {
+//   this.val = val === undefined ? 0 : val;
+//   this.next = next === undefined ? null : next;
+// }
 
-let compare = (arr) => {
-  let final = [];
-  let matched;
-  for (let i = 0; i < arr.length; i++) {
-    let firstStr, secondStr;
-    let first = [],
-      second = [];
-    first = arr[i];
-    first = first.sort((a, b) => {
-      return a - b;
-    });
-    for (let j = i + 1; j < arr.length; j++) {
-      second = arr[j];
-      second = second.sort((a, b) => {
-        return a - b;
-      });
-      if (JSON.stringify(arr[i]) === JSON.stringify(arr[j])) {
-        arr.splice(j);
-      }
-    }
-    final.push(arr[i])
-  }
-  final = arr
-  return final;
-};
+// function createList() {
+//   let arr = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
+//   let head = new ListNode();
 
-console.log(compare(parent));
+//   head.val = arr[0]
+//   let top = head
+//   for (let i = 1; i<arr.length; i++) {
+//     head.next = new ListNode(arr[i])
+//     head = head.next
+//   }
+//   return top
+// }
+
+// console.log(createList()) ;
+
+
+function removeDuplicates() {
+  let arr = [1,1,1,2,3]
+}
+
+
+removeDuplicates()
