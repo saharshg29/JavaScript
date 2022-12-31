@@ -1,0 +1,59 @@
+// 82. Remove Duplicates from Sorted List II
+
+// Given the head of a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list. Return the linked list sorted as well.
+
+function ListNode(val, next) {
+  this.val = val === undefined ? 0 : val;
+  this.next = next === undefined ? null : next;
+}
+
+function arrToList(arr) {
+  if (arr.length === 0) {
+    return null;
+  }
+  let head = new ListNode();
+
+  head.val = arr[0];
+  let top = head;
+  for (let i = 1; i < arr.length; i++) {
+    head.next = new ListNode(arr[i]);
+    head = head.next;
+  }
+
+  return top;
+}
+
+function deleteDuplicates(head) {
+  let top = head;
+  let arr = [];
+  let single = [];
+  let set = {};
+  while (head) {
+    arr.push(head.val);
+    head = head.next;
+  }
+  for (let element of arr) {
+    set[element] = (set[element] || 0) + 1;
+  }
+  arr = Object.entries(set);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i][1] === 1) {
+      single.push(parseInt(arr[i][0]));
+    }
+  }
+
+  arr = single.sort((a, b) => {
+    return a - b;
+  });
+
+  return arrToList(arr);
+}
+
+let head = arrToList([-3, -1, -1, 0, 0, 0, 0, 0, 2]);
+
+let answer = deleteDuplicates(head);
+
+while (answer) {
+  console.log(answer.val);
+  answer = answer.next;
+}
