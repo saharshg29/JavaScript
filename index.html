@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- Custom CSS -->
+	<style>
+		body {
+			background-color: #F8F9FA;
+			font-family: Arial, sans-serif;
+		}
+		.login-form {
+			margin-top: 100px;
+			box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+			border-radius: 10px;
+			overflow: hidden;
+		}
+		.login-form .form-control {
+			height: 50px;
+			border-radius: 0;
+			border-color: #D5D5D5;
+		}
+		.login-form .form-control:focus {
+			border-color: #F37934;
+			box-shadow: none;
+		}
+		.login-form .btn-primary {
+			background-color: #F37934;
+			border-color: #F37934;
+			height: 50px;
+			border-radius: 0;
+			transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+		}
+		.login-form .btn-primary:hover, .login-form .btn-primary:focus {
+			background-color: #D65A2E;
+			border-color: #D65A2E;
+			box-shadow: none;
+		}
+		.login-form .btn-primary:active {
+			background-color: #F37934;
+			border-color: #F37934;
+			box-shadow: none;
+		}
+		.login-form .btn-primary:focus {
+			box-shadow: none;
+		}
+		.login-form .form-check-input:checked {
+			background-color: #F37934;
+			border-color: #F37934;
+		}
+		.login-form .form-check-input:focus {
+			box-shadow: none;
+		}
+		.login-form .form-check-input:focus-visible {
+			outline: 2px solid #F37934;
+		}
+		.login-form .form-check-label {
+			margin-bottom: 0;
+		}
+		.login-form .invalid-feedback {
+			display: block;
+		}
+		.login-form .form-control:focus + .invalid-feedback {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-6 col-sm-8">
+				<form class="login-form p-4">
+					<h2 class="text-center mb-4">Login</h2>
+					<div class="form-group">
+						<label for="username">Username</label>
+						<input type="text" class="form-control" id="username" name="username" required>
+						<div class="invalid-feedback">Please enter your username.</div>
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" class="form-control" id="password" name="password" required>
+						<div class="invalid-feedback">Please enter your password.</div>
+					</div>
+					<div class="form-group form-check">
+						<input type="checkbox" class="form-check-input" id="remember" name="remember">
+						<label class="form-check-label" for="remember">Remember me
