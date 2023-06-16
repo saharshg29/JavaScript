@@ -8,19 +8,27 @@
 
 // Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
 
+var removeDuplicates = function (nums) {
+  let map = {};
+  let ans = [];
+  for (let i of nums) {
+    map[i] = (map[i] || 0) + 1;
+  }
+  let entries = Object.entries(map);
+  for (let i = 0; i < entries.length; i++) {
+    if (entries[i][1] >= 2) {
+      ans.push(Number(entries[i][0]));
+      ans.push(parseInt(entries[i][0]));
+    } else {
+        console.log(entries[i][1])
 
-var removeDuplicates = function(nums) {
-    let map = {}
-    for (let i of nums) {
-       
+      ans.push(parseInt(entries[i][0]));
     }
+  }
 
-
-    
-    return nums
+  return ans;
 };
 
-
-let nums = [0,0,1,1,1,1,2,3,3]
+let nums = [1,1,1,2,2,3];
 
 console.log(removeDuplicates(nums));
