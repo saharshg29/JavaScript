@@ -1,6 +1,5 @@
 // INSERTION SORT
 
-// Our array is sorted by building the left larger half 
 
 // Start by picking up second element of an array
 // Compare second element with first them and place them in order

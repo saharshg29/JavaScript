@@ -5,66 +5,47 @@
 // Here we divide one array into multiple arrays of 0-1 elements
 // Then we sort them and then merger them again
 
-function merge(arr, l, m, r) {
-  let n1 = m - l + 1;
-  let n2 = r - m;
-
-  let L = new Array(n1);
-  let R = new Array(n2);
-
-  for (let i = 0; i < n1; i++) {
-    L[i] = arr[l + i];
-  }
-  for (let j = 0; j < n2; j++) {
-    R[j] = arr[m + 1 + j];
-  }
-
+function mergeSortedArrays(array1, array2) {
+  let results = [];
   let i = 0;
-
   let j = 0;
-
-  let k = l;
-
-  while (i < n1 && j < n2) {
-    if (L[i] <= R[j]) {
-      arr[k] = L[i];
+  while (i < array1.length && j < array2.length) {
+    if (array1[i] < array2[j]) {
+      results.push(array1[i]);
       i++;
     } else {
-      arr[k] = R[j];
+      results.push(array2[j]);
       j++;
     }
-    k++;
   }
 
-  while (i < n1) {
-    arr[k] = L[i];
-    i++;
-    k++;
+  while (i < array1.length) {
+    results.push(array1[i]);
+    i++
   }
-
-  while (j < n2) {
-    arr[k] = R[j];
-    j++;
-    k++;
+  while (j< array2.length) {
+    results.push(array2[j]);
+    j++
   }
+  return results
 }
 
-function mergeSort(arr, l, r) {
-  if (l >= r) {
-    return;
+
+function mergeSortAlgorithm(array) {
+  if (array.length <= 1) {
+    return array
   }
-  let m = l + parseInt((r - l) / 2);
-  mergeSort(arr, l, m);
-  mergeSort(arr, m + 1, r);
-  merge(arr, l, m, r);
+  let midPoint  = Math.floor(array.length/2)
+  let leftPoint = mergeSortAlgorithm(array.slice(0, midPoint))
+  let rightPoint = mergeSortAlgorithm(array.slice(midPoint))
+
+  return mergeSortedArrays(leftPoint, rightPoint)
 }
 
 // let array1 = [1,5,9]
 // let array2 = [2, 6, 10, 18]
 let array = [1, 5, 2, 3, 6, 9, 8];
-mergeSort(array, 0, array.length - 1);
-console.log(array);
+console.log(mergeSortAlgorithm(array));
 
-
-// Time complexity of merge sort is logarithmic.
+// Time complexity of merge sort is linear logarithmic. O(nlogn)
 // Thus merge sort is very efficient algorithm for sorting

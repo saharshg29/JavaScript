@@ -30,5 +30,5 @@ function bubbleSort(array) {
   return array;
 }
 
-let array = [2, 3, 1, 4, 6, 7, 9, 8];
+let array = [2, 3, 1, 4, 6, 7, 9, 8, 5];
 console.log(bubbleSort(array));

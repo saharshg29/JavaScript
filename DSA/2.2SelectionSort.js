@@ -23,11 +23,13 @@ function selectionSort(array) {
       if (array[j] < array[min]) {
         min = j;
       }
+      console.log(`min ---- > ${min}  i----> ${i} j----> ${j}`);
     }
     if (i !== min) {
       let temp = array[i];
       array[i] = array[min];
       array[min] = temp;
+      console.log(array);
     }
   }
   return array;

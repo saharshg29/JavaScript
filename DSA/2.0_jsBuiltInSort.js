@@ -8,10 +8,10 @@ console.log([2, 3, 410, 33, 12, 65].sort());
 // if a-b > 0 --> b comes before a;
 // if a-b = 0 --> a and b are equal
 
-let demo = [4, 6, 15, 1.0, 5]
-let array = demo.sort((a, b) => {
-    console.log(a,b, '-->', demo);
-  return a - b;
-});
+// let demo = [4, 6, 15, 1.0, 5]
+// let array = demo.sort((a, b) => {
+//     console.log(a,b, '-->', demo);
+//   return a - b;
+// });
 
-console.log(array);
+// console.log(array);

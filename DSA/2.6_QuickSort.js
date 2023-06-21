@@ -26,7 +26,7 @@ function quick_Sort(origArray) {
 		var left = [];
 		var right = [];
 		var newArray = [];
-		var pivot = origArray.pop();
+		var pivot = origArray.shift()
 		var length = origArray.length;
 
 		for (var i = 0; i < length; i++) {
@@ -36,7 +36,10 @@ function quick_Sort(origArray) {
 				right.push(origArray[i]);
 			}
 		}
+		console.log(left, right);
 
 		return newArray.concat(quick_Sort(left), pivot, quick_Sort(right));
 	}
 }
+
+console.log(quick_Sort([2,4,5,7,8,1,3,9,6]));
