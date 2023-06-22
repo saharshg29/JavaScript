@@ -1,32 +1,60 @@
-// let arr = [1,4,5,3,2, 6,19, 17, 11,15,13,12, 10, 7,9,8, 14, 17, 16]
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+    this.prev = null;
+  }
+}
 
-// arr.sort((a, b) => {
-// //    console.log(a,b);
-//    console.log(arr.indexOf(a), arr.indexOf(b))
-//    return a-b
-// })
+class CircularQueue {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.size = 0;
+  }
 
-// console.log(arr);
-
-var compress = function(chars) {
-    let answer = []
-    let stack = []
-    for (let i = 0; i<chars.length; i++) {
-        stack.push(chars[i])
-        if (stack[stack.length-1] !== chars[i+1]) {
-            answer.push(stack[0])
-            answer.push(stack.length.toString())
-            stack=[]
-        }
+  add(value) {
+    let node = new Node(value);
+    if (this.size === 0) {
+      this.head = node;
+      this.tail = this.head;
+      this.head.next = this.tail;
+      this.head.prev = this.head;
+      this.tail.next = this.head;
+      this.tail.prev = this.head;
+    } else {
+      let current = this.tail;
+      this.tail.next = node;
+      node.prev = current;
+      this.tail = node;
+      this.tail.next = this.head;
+      this.head.prev = this.tail;
     }
-    chars = answer
-    for (let i = 0; i<chars.length; i++) {
-        chars[i] = answer[i]
+    this.size++;
+  }
+
+  remove(k) {
+    let count = 1;
+    let current = this.head;
+    while (count !== 10) {
+     console.log(current.value)
+     current = current.next
+     count++
     }
-    console.log(chars)
-    return chars.length
-};
+  }
+}
 
-let chars = ["a","a","b","b","c","c","c"]
+let cq = new CircularQueue();
 
-console.log(compress(chars));
+for (let i = 1; i<= 5; i++ ) {
+  cq.add(i)
+}
+
+// console.log(cq.head);
+cq.remove(1)
+
+// console.log(cq.head.value);
+// console.log(cq.head.next.value);
+// console.log(cq.head.next.next.value);
+// console.log(cq.head.next.next.next.value);
+// console.log(cq.head.next.next.next.next.value);
