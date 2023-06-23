@@ -19,7 +19,7 @@ let all = (idx, arr, sum, varSum = 0, empty = []) => {
     return left+right
 }
 
-let arr = [3, 1, 2, 1, 1],
-  sum = 3;
+let arr = [3,5,6,7],
+  sum = 9;
 
 console.log(all(0, arr, sum));
