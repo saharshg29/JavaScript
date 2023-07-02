@@ -10,7 +10,11 @@
 // key = 6  Output -> False
 // key = 5  Output -> True
 
-
+let arr = [ 2, 3, 4, 10, 40 ];
+//left = 0, 3, 3
+// right = 4, 4, 2
+// x = 6, 6, 6
+// mid = 2, 3
 function binarySearch(arr, l, r, x){
 	if (r >= l) {
 		let mid = l + Math.floor((r - l) / 2);
@@ -35,7 +39,7 @@ function binarySearch(arr, l, r, x){
 	return -1;
 }
 
-let arr = [ 2, 3, 4, 10, 40 ];
+// let arr = [ 2, 3, 4, 10, 40 ];
 let x = 10;
 let n = arr.length
 let result = binarySearch(arr, 0, n - 1, x);
