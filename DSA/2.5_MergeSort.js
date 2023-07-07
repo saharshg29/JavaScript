@@ -6,9 +6,10 @@
 // Then we sort them and then merger them again
 
 function mergeSortedArrays(array1, array2) {
+  // [5]  [1,2]
   let results = [];
   let i = 0;
-  let j = 0;
+  let j = 0;// 1 2
   while (i < array1.length && j < array2.length) {
     if (array1[i] < array2[j]) {
       results.push(array1[i]);
@@ -42,8 +43,8 @@ function mergeSortAlgorithm(array) {
   return mergeSortedArrays(leftPoint, rightPoint)
 }
 
-// let array1 = [1,5,9]
-// let array2 = [2, 6, 10, 18]
+// let array1 = [5,1,2] [5] [1,2] []
+// let array2 = [3, 6, 9, 8]
 let array = [1, 5, 2, 3, 6, 9, 8];
 console.log(mergeSortAlgorithm(array));
 

@@ -8,9 +8,14 @@
 
 // string = abcabcabspl
 // substring = abcabcs
+
+// lps = [0,0,0,0,0,0,0]
+
+
+// 
 function calculateLpsTable(substring) {
-  let i = 1;
-  let j = 0;
+  let i = 1; //6
+  let j = 0;// 0
   let lps = new Array(substring.length).fill(0);
   while (i < substring.length) {
     if (substring[i] === substring[j]) {
@@ -27,8 +32,9 @@ function calculateLpsTable(substring) {
   }
   return lps;
 }
-console.log(calculateLpsTable("harsh"))
+console.log(calculateLpsTable("harsh"));
 
+// lps = [0,0,0,1,2,3,0 ]
 function kmpAlgorithm(string, substring) {
   let stringLength = string.length;
   let substringLength = substring.length;
@@ -40,17 +46,17 @@ function kmpAlgorithm(string, substring) {
       i += 1;
       j += 1;
     } else {
-	if (j!==0) {
-		j = lps[j-1]
-	}else {
-		i +=1
-	}
+      if (j !== 0) {
+        j = lps[j - 1];
+      } else {
+        i += 1;
+      }
     }
-    if ( j === substringLength) {
-	return true
+    if (j === substringLength) {
+      return true;
     }
   }
-  return false
+  return false;
 }
 
-console.log(kmpAlgorithm("Saharsh", "hash"));
+console.log(kmpAlgorithm("Saharsh", "harsh"));

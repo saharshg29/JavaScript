@@ -6,6 +6,7 @@
 function naiveSearch(string, substring) {
     for (let i = 0; i<string.length; i++) {
         for(let j = 0; j<substring.length; j++){
+            
             if (string[i+j] !== substring[j]) {
                 break;
             }
@@ -17,7 +18,11 @@ function naiveSearch(string, substring) {
     return false
 }
 
-let string = "Saharsh Gupta"
-let substring = "hash"
+//i -> 0 0 0 0 0 0  0   0   1  2
+//j -> 0 1 2 3 4 5 11  12   0  0
+//c -> S a h a r s  t  a-x  
 
-console.log(naiveSearch(string,substring));
+let string = "Saharsh Gupta"
+let substring = "Saharsh Guptx" 
+
+    console.log(naiveSearch(string,substring));

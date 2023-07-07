@@ -13,25 +13,26 @@ let all = (idx, target, arr, ds, ans) => {
       continue;
     }
     if (arr[i] > target) {
-        break
+      break;
     }
-    ds.push(arr[i])
-    all(i+1, target-arr[i], arr,ans,ds)
-    ds.pop()
+    ds.push(arr[i]);
+    all(i + 1, target - arr[i], arr, ans, ds);
+    ds.pop();
   }
 };
 
 var combinationSum2 = function (candidates, target) {
-    candidates.sort((a,b) => {
-        return a-b
-    })
+  candidates.sort((a, b) => {
+    return a - b;
+  });
   let ans = [];
   let carrier = [];
   all(0, target, candidates, carrier, ans);
-
+  console.log(ans);
   return ans;
 };
 
 let candidates = [10, 1, 2, 7, 6, 1, 5];
 target = 8;
-console.log(combinationSum2(candidates, target));
+// console.log(combinationSum2(candidates, target));
+combinationSum2(candidates, target);

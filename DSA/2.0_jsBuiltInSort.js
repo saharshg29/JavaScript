@@ -1,7 +1,7 @@
 // The sort() method in js does not work well certain time when we use it this is because of the fact that first the array data will be converted into ASCII unicode value and then sort() is called
-console.log(["m", "y", "a", "b", "z", "c", "x"].sort());
+console.log(["m", "y", "a", "b", "xxx", "xy" ,"z", "c", "x"].sort());
 
-console.log([2, 3, 410, 33, 12, 65].sort());
+console.log([2, 3, 410, 33, 12, 65, 333].sort());
 
 // using inbuilt sort function to print the values of an array in ascending order
 // if a-b < 0 --> a comes before b;

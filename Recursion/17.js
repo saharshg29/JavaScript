@@ -1,18 +1,20 @@
 // Printing Subseqences of a list using recursion
 
-function all(idx, arr, empty = []) {
-    if (idx >= arr.length) {
-       console.log(empty);
-        return 
-    }
-    // console.log(idx);
-    empty.push(arr[idx])
-    all(idx+1, arr, empty) // -----------------> Take an element
-    // arr.splice(i, 1)
-    empty.pop()
-    all(idx+1, arr, empty) // -----------------> Not take element
+function all(idx, arr, ans, empty = []) {
+  if (idx >= arr.length) {
+    ans.push([...empty]);
+    return;
+  }
+  empty.push(arr[idx]);
+  all(idx + 1, arr, ans, empty); // -----------------> Take an element
+  empty.pop();
+  all(idx + 1, arr, ans, empty); // -----------------> Not take element
 }
 
-let arr = [3,1,2]
+let ans = [];
+let arr = "abc";
+let empty = [];
 
-all(0, arr)
+all(0, arr.split(""), ans);
+
+console.log(ans);

@@ -9,6 +9,11 @@
 // [2,1,9,7,6,4] -> Input
 // [1,2,4,6,7,9] -> Output
 
+// i->  1
+// j->  0
+// key->2
+// []
+
 function insertionSort(arr, n) 
 { 
     let i, key, j; 
@@ -28,5 +33,5 @@ function insertionSort(arr, n)
     return arr
 } 
 
-let array = [2,1,9,7,6,4]
+let array = [2,1,9,1,7,6,4]
 console.log(insertionSort(array, array.length));

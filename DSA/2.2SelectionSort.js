@@ -12,7 +12,12 @@
 // This step is repeated until the array is sorted
 
 // [0, 2, 34, 22, 10, 19] -> INPUT
-// [0, 2, 10, 19, 22, 34] -> OUTPUT
+
+
+//i  0          1
+//min0 0 0 0 0
+//j  1 2 3 4 5
+
 
 // TIME COMPLEXITY -> O(n^2) QUADRATIC TIME COMPLEXITY
 
@@ -23,7 +28,7 @@ function selectionSort(array) {
       if (array[j] < array[min]) {
         min = j;
       }
-      console.log(`min ---- > ${min}  i----> ${i} j----> ${j}`);
+      // console.log(`min ---- > ${min}  i----> ${i} j----> ${j}`);
     }
     if (i !== min) {
       let temp = array[i];

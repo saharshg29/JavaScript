@@ -27,11 +27,11 @@ function binarySearch(arr, l, r, x){
 		// If element is smaller than mid, then
 		// it can only be present in left subarray
 		if (arr[mid] > x)
-			return binarySearch(arr, l, mid - 1, x);
+			return binarySearch(arr, l, mid, x);
 
 		// Else the element can only be present
 		// in right subarray
-		return binarySearch(arr, mid + 1, r, x);
+		return binarySearch(arr, mid, r, x);
 	}
 
 	// We reach here when element is not

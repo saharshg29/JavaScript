@@ -227,6 +227,7 @@ let ll = new SingleLinkedList(); //Initialising a new linked list
 ll.push(2); // Adding first element
 ll.push(2); // Adding next element
 ll.push(3); // Adding next element
+console.log(ll);
 // ll.newHead(1);                   // Adding element at begining or creating new head
 // let removed = ll.shift(); // Removing element from begining of linkedlist
 // console.log(removed);
@@ -237,10 +238,10 @@ ll.push(3); // Adding next element
 // console.log(ll.set("HI", 2)); // Updating value of linked list at particular index
 // console.log(ll.insert(56, 1));
 // console.log(ll.remove(2));
-ll.traverse();
+// ll.traverse();
 // ll.reverse();
-console.log(ll.reverse());
-ll.traverse();
+// console.log(ll.reverse());
+// ll.traverse();
 // console.log(ll); // Print entire linked list
 
 
