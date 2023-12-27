@@ -1,0 +1,12 @@
+To print all the Subseqences use parameterized recursion -------------> 17.js
+
+To Print all the subseqences whose sum is k use parameterized recursion-----------------> 18.js
+for this we just just need to carry one varSum in our parameters and calculate it 
+In brute force approach we will check for all the subseqence if the total sum is k if true then print subseqence else return from base case
+
+To Print any 1 subseqence whose sum is k we need to use functional recursion ----------------> 19.js
+Function will return true if a subseqence with given sum k is found and further recursion calls will be avoided
+
+To print the count of all subseqences having the given sum k we will be using functional recursion --------------> 20.js
+Function will return 1 if base condition is matched or it will return 0 if base condition is not matched 
+and at last it will return sum of all function calls
